@@ -1,0 +1,16 @@
+services:
+  postgres:
+    container_name: threads-db
+    image: postgres:18
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: threads
+      POSTGRES_DB: threads
+      PGDATA: /var/lib/postgresql/18/main
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
